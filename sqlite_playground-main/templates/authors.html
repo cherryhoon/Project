@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <ul>
+    {% for author in authors %}
+        <li><a href="http://0.0.0.0:8000/author/{{ author.id }}">{{ author.name }}</a></li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
