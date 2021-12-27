@@ -29,7 +29,14 @@ function _use_local_env {
 # ----------------------------------------------------------------------------
 
 function up {
-    uvicorn main:app --reload --host 0.0.0.0 --port 8000 --log-level info
+    uvicorn main:app --reload --host mipt-space-907-908.ru --port 5018 --log-level info
+}
+
+function copy:remote {
+    scp db/main.db kate:~/app/db
+    scp -r static kate:~/app
+    scp -r templates kate:~/app
+    scp main.py requirements.txt run.sh kate:~/app
 }
 
 function reset {
