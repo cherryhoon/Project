@@ -1,3 +1,5 @@
+db = databases.Database("sqlite:///./db/main.db")
+
 author = """--sql
         select * from author
         left join author_died
